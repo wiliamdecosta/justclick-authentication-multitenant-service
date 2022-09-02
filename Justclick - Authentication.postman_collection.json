@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "96e24344-8b65-4619-9759-23e5f9f4003a",
+		"name": "Justclick - Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "v1",
+			"item": [
+				{
+					"name": "registration",
+					"item": [
+						{
+							"name": "Register Company & Admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"companyName\" : \"PT. Astra International\",\r\n    \"companyAddress\" : \"Jakarta\",\r\n    \"companyWebsite\" : \"astrainternational.com\",\r\n    \"companyEmail\" : \"info@astrainternational.com\",\r\n    \"companyPhone\" : \"022-71631289\",\r\n    \"companyLogo\" : \"astralogo.png\",\r\n    \"firstName\":\"Jason\",\r\n    \"lastName\":\"Lee\",\r\n    \"email\":\"jasonlee@astrainternational.com\",\r\n    \"password\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9100/v1/admin/registration",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"v1",
+										"admin",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "X-TenantID",
+										"value": "pt-gudang-garam",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Melvin\",\r\n    \"lastName\":\"Mumpuni\",\r\n    \"email\":\"melvinmumpuni@bankjago.com\",\r\n    \"password\":\"123456\",\r\n    \"image\":\"profil.png\",\r\n    \"roles\":[\"operator\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9100/v1/user/registration",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9100",
+									"path": [
+										"v1",
+										"user",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
