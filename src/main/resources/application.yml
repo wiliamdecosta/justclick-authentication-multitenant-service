@@ -1,0 +1,21 @@
+server:
+  port: 9100
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hiberate:
+        format_sql: true
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+  flyway:
+    locations: "classpath:db/migration"
+    validate-on-migrate: false
+  datasource:
+    url: jdbc:postgresql://localhost:5433/db_justclick_new?escapeSyntaxCallMode=callIfNoReturn
+    username: postgres
+    password: postgres
+  main:
+    allow-circular-references: false
