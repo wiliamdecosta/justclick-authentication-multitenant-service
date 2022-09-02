@@ -10,10 +10,11 @@ import com.justclick.authentication.repositories.TenantRepository;
 
 
 @Configuration
-public class AppConfig implements WebMvcConfigurer {
+public class InterceptorConfig implements WebMvcConfigurer {
 	
 	 @Autowired
 	 TenantRepository tenantRepo;
+	 
 	 @Override
 	 public void addInterceptors(InterceptorRegistry registry)   {
 		 registry.addInterceptor(new RequestInterceptor(tenantRepo));
